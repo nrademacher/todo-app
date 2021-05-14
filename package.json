@@ -8,10 +8,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "vite --open",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
+    "start": "export NODE_ENV=development && webpack serve --open --config webpack.dev.js",
+    "dev": "export NODE_ENV=development && webpack serve --config webpack.dev.js",
+    "build": "export NODE_ENV=production && webpack --config webpack.prod.js",
     "lint": "if [ -f .eslintrc.* ]; then eslint . --fix; else yarn setup:eslint && eslint . --fix; fi",
     "clean": "rm -r dist/",
     "setup:eslint": "yarn add -D eslint && eslint --init && if [ -f package-lock.json ]; then rm package-lock.json && yarn; fi && printf 'node_modules/\nbuild/' > .eslintignore",
@@ -20,12 +19,38 @@
     "git:rewind": "git reset --hard && git clean -f -d && yarn"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.4",
+    "esbuild-loader": "^2.12.0",
+    "html-webpack-plugin": "^5.3.1",
+    "image-webpack-loader": "^7.0.1",
+    "mini-css-extract-plugin": "^1.5.0",
     "postcss": "latest",
-    "vite": "latest"
+    "postcss-loader": "^5.2.0",
+    "react-refresh": "^0.10.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.1.2",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "autoprefixer": "latest",
-    "tailwindcss": "latest"
+    "bootstrap": "^5.0.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.0",
+    "react-dom": "^17.0.2",
+    "reactjs-localstorage": "^1.0.1",
+    "sass": "^1.32.13"
   },
-  "browserslist": ["defaults"]
+  "browserslist": [
+    "defaults"
+  ]
 }
