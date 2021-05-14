@@ -1,5 +1,10 @@
-## Webdev Starter 🚀
+## Todo app
 
-This is a light-weight boilerplate for quickstarting pretty much any new web development project.
+A basic todo app in React which makes use of `useRef` and `useState` to manage different sets of state in unmounted components (all, active, and completed todos in separate tabs).
 
-Its aim is to be continuously optimized for speed, simplicity, and ease of use.
+### Features
+
+* Add new todos and manage them in All, Active, and Completed views
+* Toggle between all states
+* Delete completed todos individually or all at once
+* Session is persisted through local storage
