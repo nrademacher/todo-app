@@ -74,6 +74,7 @@ const App = () => {
                 onChange={(e) => handleChange(e)}
                 className="me-2"
                 placeholder="Add todo"
+                required
               />
               <Button type="submit">Submit</Button>
             </Form>
@@ -106,6 +107,7 @@ const App = () => {
                 onChange={(e) => handleChange(e)}
                 className="me-2"
                 placeholder="Add todo"
+                required
               />
               <Button type="submit">Submit</Button>
             </Form>
